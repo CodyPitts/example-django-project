@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('end_time', models.DateTimeField(blank=True, null=True)),
                 ('room', models.CharField(blank=True, max_length=200)),
                 ('summary', models.TextField(blank=True)),
-                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cody_app.Event')),
+                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='simple_app.Event')),
             ],
         ),
         migrations.CreateModel(
@@ -53,6 +53,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='session',
             name='speakers',
-            field=models.ManyToManyField(blank=True, to='cody_app.Speaker'),
+            field=models.ManyToManyField(blank=True, to='simple_app.Speaker'),
         ),
     ]

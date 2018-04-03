@@ -5,8 +5,8 @@ from django.db import models
 
 class Event(models.Model):
     event_name = models.CharField(max_length=50)
-    start_date = models.DateField(blank=True)
-    end_date = models.DateField(blank=True)
+    start_date = models.DateField(blank=True, null=True)
+    end_date = models.DateField(blank=True, null=True)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=20, blank=True)
     venue = models.CharField(max_length=50, blank=True)
