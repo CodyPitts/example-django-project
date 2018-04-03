@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Event Home{% endblock %}
+{% block pagename %}Event Home{% endblock %}
+
+{% block container %}
+
+<p>This event is called {{ event.event_name }}. It will take place in {{ event.city }}.</p>
+
+<ul>
+    <li><a href="{% url 'speakers' event.slug %}">Speakers</a></li>
+    <li><a href="{% url 'schedule' event.slug %}">Schedule</a></li>
+
+</ul>
+
+{% endblock %}

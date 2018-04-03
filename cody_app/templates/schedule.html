@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Schedule{% endblock %}
+{% block pagename %}Schedule for {{ event.event_name }}{% endblock %}
+
+{% block container %}
+    {% if session_list %}
+        {% for session in session_list %}
+        <div class="session-entry">
+            <p>{{ session }} : {{ session.summary }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No sessions are available</p>
+    {% endif %}
+{% endblock %}
