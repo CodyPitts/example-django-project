@@ -16,7 +16,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 source /usr/local/bin/virtualenvwrapper.sh
 ```
 
-Now run ```mkvirtual env <your-env-here>```, and you should see the name of your virtualenv prepended to your command line. If not, run ```workon <your-env-here>``` to enter it, and ```deactivate``` to leave it.
+Now run ```mkvirtualenv <your-env-here>```, and you should see the name of your virtualenv prepended to your command line. If not, run ```workon <your-env-here>``` to enter it, and ```deactivate``` to leave it.
 
 Once inside your virtualenv and in the directory with requirements.txt, run ```pip install -r requirements.txt``` to install the listed packages. At any time, you can run ```pip freeze``` to see the packages you have installed in your current environment.
 
