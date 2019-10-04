@@ -51,3 +51,27 @@ class Session(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AbstractSession(models.Model):
+    title = models.CharField(max_length=200)
+    start_time = models.DateTimeField(blank=True, null=True)
+    end_time = models.DateTimeField(blank=True, null=True)
+    room = models.CharField(max_length=200, blank=True)
+    summary = models.TextField(blank=True)
+    speakers = models.ManyToManyField(Speaker, blank=True)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.title
+
+
+class FeaturedSession(AbstractSession):
+    upload = models.FileField(upload_to='uploads/', help_text="This is unique to Featured Sessions", blank=True)
+
+
+class LightningTalk(AbstractSession):
+    items_to_bring = models.TextField(help_text="This should only be on Lightning Talks", blank=True)
